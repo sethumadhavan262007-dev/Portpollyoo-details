@@ -1,0 +1,385 @@
+/* ---------- Colors ---------- */
+:root {
+  --black: #0b0b0b;
+  --card: #161616;
+  --gold: #d4af37;
+  --gold-light: #f5d76e;
+  --text: #f4f1e8;
+  --muted: #b9b4a3;
+}
+
+/* ---------- Basic ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--black);
+  color: var(--text);
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 60vh;
+}
+
+main section {
+  padding: 0 6%;
+  margin: 25px 0;
+}
+
+/* ---------- Navigation ---------- */
+nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1.4vw 7.5%;
+  position: sticky;
+  top: 0;
+  background: var(--black);
+  z-index: 10;
+}
+
+nav b {
+  font-size: clamp(1.1rem, 2.3vw, 2.1rem);
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 3vw;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  font-size: clamp(.8rem, 1.45vw, 1.3rem);
+  transition: 0.2s;
+}
+
+nav ul a:hover,
+nav ul a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+nav a.btn {
+  justify-self: end;
+  color: var(--black);
+  border-bottom: none;
+  padding: .9vw 2.4vw;
+  font-size: clamp(.8rem, 1.5vw, 1.3rem);
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  padding: 13px 28px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}
+
+/* ---------- Hero ---------- */
+main section.hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 0 0 7.5%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.hero-text {
+  align-self: center;
+  padding: 2vw 0;
+}
+
+.hero h1 {
+  display: inline-block;
+  position: relative;
+  font-size: clamp(2.6rem, 7.6vw, 7.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.2vw;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.scribble {
+  position: absolute;
+  right: -4.4vw;
+  bottom: -2vw;
+  width: 9vw;
+}
+
+.hero h2 {
+  font-size: clamp(1.7rem, 4vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 3vw;
+}
+
+.hero .btn {
+  font-size: clamp(1rem, 1.8vw, 1.6rem);
+  padding: 1.3vw 2.6vw;
+  border-radius: 1vw;
+}
+
+.hero-img {
+  width: 46.6%;
+  display: block;
+}
+
+/* ---------- Page titles ---------- */
+h2.section-title {
+  margin-bottom: 20px;
+  color: var(--gold);
+}
+
+/* ---------- Project cards (gold pictures) ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4vw;
+}
+
+main section.cards {
+  padding: 0 5.7%;
+  margin: 1.5vw 0 0;
+}
+
+.pcard {
+  background: #dcb844;
+  color: var(--black);
+  border-radius: 1.4vw;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.pcard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.35);
+}
+
+.pcard img {
+  width: 100%;
+  display: block;
+}
+
+.pcard h3 {
+  font-size: clamp(1rem, 1.75vw, 1.7rem);
+  padding: 1vw 1vw 1.8vw;
+}
+
+.pcard p {
+  padding: 0 1.5vw 2vw;
+  margin-top: -1vw;
+  color: #3a2f0b;
+}
+
+/* ---------- Boxes (About, Resume, Contact) ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.box {
+  background: var(--card);
+  border: 1px solid #2e2e2e;
+  border-left: 4px solid var(--gold);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.box h3 {
+  color: var(--gold);
+}
+
+.box p,
+.box li {
+  margin-top: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.box ul {
+  padding-left: 20px;
+}
+
+/* old color names still work, now in gold shades */
+.peach { border-left-color: var(--gold); }
+.green { border-left-color: var(--gold-light); }
+.blue  { border-left-color: #b8962e; }
+
+/* ---------- Tags ---------- */
+.tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.3vw;
+  padding: 2.4vw 0 1vw;
+}
+
+.tags span {
+  background: var(--gold);
+  color: var(--black);
+  font-weight: 600;
+  font-size: clamp(.8rem, 1.5vw, 1.3rem);
+  padding: .6vw 2.6vw;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+.tags span:nth-child(even) {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+.tags span:hover {
+  transform: scale(1.08);
+}
+
+/* ---------- Form ---------- */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: var(--black);
+  color: var(--text);
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--gold);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  margin: 20px 6% 0;
+  color: var(--gold);
+  border-top: 1px solid #2a2a2a;
+}
+
+/* ---------- Small screens: same look, only the lower boxes stack ---------- */
+@media (max-width: 700px) {
+  nav {
+    grid-template-columns: 1fr auto;
+    row-gap: 10px;
+    padding: 12px 4%;
+  }
+
+  nav b {
+    font-size: 1.1rem;
+  }
+
+  nav ul {
+    grid-column: 1 / -1;
+    order: 3;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: .85rem;
+  }
+
+  nav a.btn {
+    padding: 8px 16px;
+    font-size: .85rem;
+    white-space: nowrap;
+  }
+
+  main section.hero {
+    padding-left: 5%;
+  }
+
+  .hero h1 {
+    font-size: 8.4vw;
+  }
+
+  .hero h2 {
+    font-size: 4.6vw;
+    margin-bottom: 4vw;
+  }
+
+  .hero .btn {
+    font-size: 3.4vw;
+    padding: 2.6vw 4.6vw;
+    border-radius: 2vw;
+  }
+
+  .scribble {
+    width: 14vw;
+    right: -6vw;
+    bottom: -3vw;
+  }
+
+  .tags span {
+    font-size: .8rem;
+    padding: 6px 18px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .pcard {
+    border-radius: 16px;
+  }
+
+  .pcard h3 {
+    font-size: 1.2rem;
+    padding: 12px 8px 20px;
+  }
+
+  .pcard p {
+    margin-top: -8px;
+    padding-bottom: 18px;
+  }
+}
+
+button {
+  font-family: inherit;
+}
